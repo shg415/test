@@ -10,16 +10,17 @@
 </template>
 
 
+
 <script>
-  new Vue({
-    el: '#app',
-    data: {
-            return{
-      items: [
-      { message: 'りんご' },
-      { message: 'いちご' }
-      ]
-      }
+  export default{
+    name:"items",
+    data() {
+      return{
+        items: [
+        { message: 'りんご' },
+        { message: 'いちご' }
+        ]
+      };
     }
-  })
+  };
 </script>
