@@ -66,8 +66,7 @@
         line-height: 16px;
 
         span{
-          $background: #F5F5F5;
-          color: #4394BA;
+          color: $blue;
           font-size: 11px;
           background-color: $background;
           margin: 0 5px;

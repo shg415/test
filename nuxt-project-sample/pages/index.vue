@@ -1,11 +1,9 @@
 <template>
   <div class="container">
     <div>
-      <div id="app">
-      <button-vue>aaa</button-vue>
-      </div>
       <heading-h1 />
       <logo />
+      <sample-component title="More" />
       <h1 class="title">
         nuxt-project-sample
       </h1>
@@ -35,27 +33,14 @@
 <script>
   import Logo from '~/components/Logo.vue'
   import HeadingH1 from '~/components/HeadingH1.vue'
-
+  import SampleComponent from '~/components/SampleComponent.vue'
   export default {
     components: {
       Logo,
-      HeadingH1
+      HeadingH1,
+      SampleComponent
     }
   }
-</script>
-
-<script>
-
-  Vue.component("button-vue", {
-    template: `
-    <div class="button-vue">
-      <slot></slot>
-    </div>
-    `
-  });
-  var app = new Vue({
-    el: "#app"
-  });
 </script>
 
 
@@ -93,4 +78,5 @@
   .links {
     padding-top: 15px;
   }
+
 </style>
