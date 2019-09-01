@@ -2,8 +2,13 @@
   <div id="news">
     <ul>
       <li v-for="item in items">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.from }}{{ item.date }}<span>{{ item.point }}points</span></p>
+        <nuxt-link class="item" :to="item.path">
+            <div class="title">
+              <list-icon /><h2>{{ item.title }}</h2>
+            </div>
+            <p>{{ item.from }}{{ item.date }}<span>{{ item.point }}points</span></p>
+
+        </nuxt-link>
       </li>
     </ul>
 
@@ -13,53 +18,57 @@
 
 
 <script>
+  import ListIcon from '~/components/ListIcon.vue'
   export default{
+    components: {
+      ListIcon
+    },
     name:"items",
     data() {
       return{
         items: [
-        { title: "りんご", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
-        { title: "りんご", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
-        { title: "りんご", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
-        { title: "りんご", from:"TechCrunch Japan", date: "2019.08.20", point: 3}
+        { title: "りんご", path: "/about", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
+        { title: "りんご", path: "/", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
+        { title: "りんご", path: "/", from:"TechCrunch Japan", date: "2019.08.20", point: 3},
+        { title: "りんご", path: "/", from:"TechCrunch Japan", date: "2019.08.20", point: 3}
         ]
       };
     }
   };
+
+
 </script>
 
 
 
 <style scoped lang="scss">
+  .item{
+    text-decoration: none;
+    color: black;
+  }
+  .title{
+    display: flex;
+    align-items: center;
+  }
 
-    ul{
-      margin: 0 auto;
-      padding: 0;
-    li{
+  ul{
+    margin: 0 auto;
+    padding: 0;
+    > li{
       margin-bottom: 3px;
       background-color: white;
       list-style: none;
-      padding: 10px 30px;
-
+      padding: 10px 20px;
 
       h2{
-        font-weight:normal;
+        font-weight: normal;
         font-size: 14px;
         text-align: left;
-        position:relative;
-        &:before{
-        content: "";
-        position:absolute;
-        left:-20px;
-        top:2px;
-        width:15px;
-        height:15px;
-        display: block;
-        background: url('~assets/img/list-icon.png');
-        background-size:contain;
-        }
+        position: relative;
+        line-height: 15px;
       }
       p{
+        padding: 5px 28px;
         font-size: 8px;
         color: gray;
         text-align: left;
@@ -76,7 +85,7 @@
     }
 
 
-    }
+  }
 
 
 </style>
