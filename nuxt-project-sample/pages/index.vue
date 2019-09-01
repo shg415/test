@@ -1,82 +1,30 @@
 <template>
-  <div class="container">
-    <div>
-      <heading-h1 />
-      <logo />
-      <sample-component title="More" />
-      <h1 class="title">
-        nuxt-project-sample
-      </h1>
-      <h2 class="subtitle">
-        My remarkable Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        class="button--green"
-        >
-        Documentation
-      </a>
-      <a
-      href="https://github.com/nuxt/nuxt.js"
-      target="_blank"
-      class="button--grey"
-      >
-      GitHub
-    </a>
+  <div>
+
+    <usage-organism />
+    <products-organism />
+    <resdev-organism />
+    <news-organism />
   </div>
-</div>
-</div>
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue'
-  import HeadingH1 from '~/components/HeadingH1.vue'
-  import SampleComponent from '~/components/SampleComponent.vue'
-  export default {
-    components: {
-      Logo,
-      HeadingH1,
-      SampleComponent
-    }
+import UsageOrganism from '~/components/Organisms/UsageOrganism.vue'
+import ProductsOrganism from '~/components/Organisms/ProductsOrganism.vue'
+import ResdevOrganism from '~/components/Organisms/ResdevOrganism.vue'
+import NewsOrganism from '~/components/Organisms/NewsOrganism.vue'
+
+export default {
+  components: {
+    UsageOrganism,
+    ProductsOrganism,
+    ResdevOrganism,
+    NewsOrganism
   }
+}
+
+
 </script>
 
-
-
 <style scoped lang="scss">
-  .container {
-    $background: #F5F5F5;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color:$background;
-  }
-
-  .title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
-
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
-  }
-
 </style>

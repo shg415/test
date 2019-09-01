@@ -1,10 +1,8 @@
 <template>
   <div class="button-container">
-
     <div class="button">
       {{ title }}
     </div>
-
   </div>
 </template>
 
@@ -39,7 +37,7 @@
     vertical-align:middle;
     width:100%;
 
-  /*上下中央揃え*/
+    /*上下中央揃え*/
   }
 
 </style>
